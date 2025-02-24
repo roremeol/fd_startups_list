@@ -1,4 +1,26 @@
-## USP
+# Startups Brasileiras
+
+Este repositório é uma lista de startups brasileiras. O objetivo é ajudar empreendedores e investidores a encontrar novas oportunidades e conectar-se com startups promissoras.
+
+## Como contribuir
+
+Contribuições são bem-vindas! Se você conhece uma startup brasileira que não está na lista, por favor, abra um pull request com as informações necessárias.
+
+## Licença
+
+Este repositório está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
+
+## Inspiração
+
+Este projeto foi inspirado pelo vídeo [As Vagas Realmente Acabaram? (Investigação)](https://youtu.be/u-6XK1yy3rE?si=iqxVaJCGtTOn0TzG).
+
+## Agradecimento
+
+Obrigado [Filipe Deschamps](https://filipedeschamps.com.br) [do canal Filipe Deschamps do Youtube](https://www.youtube.com/@FilipeDeschamps) [por dizer o que você faria](https://youtu.be/u-6XK1yy3rE?t=2057) e que me deu a idéia de ciar este repositório
+
+# Lista de Startups
+
+### USP
 
 Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
 ---- | --------- | ---- | --- | ----------- | ---------------
@@ -110,7 +132,7 @@ XYZ- Molecular Target |  Mapeamento por novos antibióticos para combater a resi
 Zelus |  Desenvolvimento de processos de peletização para a área farmacêutica.   |   |  |  | 
 
 
-## UNICAMP
+### UNICAMP
 
 Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
 ---- | --------- | ---- | --- | ----------- | ---------------
@@ -220,7 +242,7 @@ carga24h | https://parque.inova.unicamp.br/portfolio/carga24h/  |   |  |  |
 bioacids-tech | https://parque.inova.unicamp.br/portfolio/bioacids-tech/  |   |  |  | 
 
 
-## PUC-Rio
+### PUC-Rio
 
 Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
 ---- | --------- | ---- | --- | ----------- | ---------------
@@ -318,7 +340,7 @@ www.redizz.com.br | http://www.redizz.com.br/  |   |  |  |
 www.instagram.com | https://www.instagram.com/veronicabolosdoces_?igsh=MWpvZGtheDE5djJwaA==  |   |  |  | 
 
 
-## UFRJ
+### UFRJ
 
 Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
 ---- | --------- | ---- | --- | ----------- | ---------------
@@ -407,7 +429,7 @@ ativatec | https://www.ativatec.com.br/  |   |  |  |
 ARES | https://www.ares-vr.com/  |   |  |  | 
 
 
-## CUBO - Itaú
+### CUBO - Itaú
 
 Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
 ---- | --------- | ---- | --- | ----------- | ---------------
