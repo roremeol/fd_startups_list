@@ -20,6 +20,8 @@ Obrigado [Filipe Deschamps](https://filipedeschamps.com.br) [do canal Filipe Des
 
 # Lista de Startups
 
+[USP](#usp), [UNICAMP](#unicamp), [PUC-Rio](#puc-rio), [UFRJ](#ufrj), [CUBO](#cubo-itaú)
+
 ### USP
 
 ![[usp_startups.md]]
