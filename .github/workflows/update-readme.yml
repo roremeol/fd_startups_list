@@ -2,6 +2,8 @@ name: README Dynamic Update
 
 on:
   push:
+    branches:
+      - master
     paths:
       - README.md
       - tables/*.md
