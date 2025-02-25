@@ -32,8 +32,13 @@ jobs:
           git config --global user.name github_actions
           git add .
           git commit -m "README Create Automation" -a
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     force: true
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: repo-sync/pull-request@v2
         with:
+          destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          force: true
