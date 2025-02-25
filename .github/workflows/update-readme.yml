@@ -30,6 +30,7 @@ jobs:
 
       - name: commit
         run: |
+          sudo chmod -R ugo+rwX .
           git config --global user.email github_actions@email.com
           git config --global user.name github_actions
           git add .
