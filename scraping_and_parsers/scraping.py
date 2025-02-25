@@ -4,6 +4,7 @@ import sys
 import os 
 import json
 
+# checa de dois arrays sao iguais
 def checkEqual(a, b):
     n, m = len(a), len(b)
     if n != m:
@@ -70,6 +71,7 @@ heads=[]
 for child in root:
     startup = []
 
+    # loop nas colunas da tabela
     for col in json_parser['columns']:
         if len(heads) < len(json_parser['columns']):
             heads.append( (col['name'] if 'name' in col else "") )
@@ -94,7 +96,6 @@ for child in root:
     if checkEqual(startup,["" for h in heads]) != True:
         startups.append(startup)
 
-# Possibilita input de separador via argv
 if 'separator' in json_parser:
     separator=json_parser['separator']
 else:
