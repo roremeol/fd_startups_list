@@ -4,13 +4,15 @@ import json
 
 # read all tables/.md files
 readmefiles = []
-for root, dirs, files in os.walk(os.path.dirname(os.path.realpath(__file__)) + "/tables/"):
+path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"tables")
+for root, dirs, files in os.walk(path):
     for file in files:
         if file.endswith(".md"):
              readmefiles.append(os.path.join(root, file))
 
 # load README.md
-with open(os.path.dirname(os.path.realpath(__file__)) + '/README.md', 'r') as file:
+path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"README")
+with open(path, 'r') as file:
   readme_data = file.read()
 
 # match pattern (<variable-*.?-tag>)(`*.?`)
@@ -26,6 +28,7 @@ for filename in readmefiles:
     readme_data = readme_data.replace('![[' + basename + ']]', content)
 
 # white README.md
-with open(os.path.dirname(os.path.realpath(__file__)) + '/README.md', "w") as f:
+path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"README.md")
+with open(path, "w") as f:
     f.write(readme_data)
     
