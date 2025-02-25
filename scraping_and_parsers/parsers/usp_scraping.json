@@ -1,0 +1,28 @@
+{
+  "html_file": "sites/usp.htm",
+  "separator": " | ",
+  "root_selector": ".flip-card",
+  "columns": [
+    {
+      "name": "Nome",
+      "selector": ".flip-card > .flip-front .brands-logo-container > img",
+      "xpath": "@alt"
+    },
+    {
+      "name": "Descrição",
+      "selector": ".flip-card > .flip-back > .flip-content > .text-card-1 ::text"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação"
+    }
+  ]
+}

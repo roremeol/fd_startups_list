@@ -1,5 +1,5 @@
-Nome | Descrição | Link | CTO | Tech Leader | Área de atuação
----- | --------- | ---- | --- | ----------- | ---------------
+Nome | Descrição | Github | CTO | Tech Leader | Área de atuação
+---- | --------- | ------ | --- | ----------- | ---------------
 123 Seguro | https://123seguro.com.br/ |  |  |  | 
 4Hábitos | https://4habitos.com.br |  |  |  | 8º andar
 4KST | https://4kst.com |  |  |  | Análise de Dados
@@ -89,6 +89,7 @@ Brokerware | https://brokerware.com.uy |  |  |  | Financeiro
 Btime | https://btime.io |  |  |  | Produtividade
 Bykonz | https://bykonz.com |  |  |  | Marítimo e Portuário
 ByMyCell | https://bymycell.com.br/ |  |  |  | Biotecnologia
+Calm es simple |  |  |  |  | Varejo
 Calm es simple | https://calmessimple.com.ar |  |  |  | Varejo
 Captable | https://captable.com.br/ |  |  |  | Financeiro
 Carbonext | https://carbonext.com.br |  |  |  | 
@@ -386,6 +387,7 @@ PRODUZINDO CERTO | https://produzindocerto.com.br/ |  |  |  | Agricultura e Pecu
 Proesc | https://proesc.com |  |  |  | 
 Promtior | https://promtior.ai |  |  |  | Produtividade
 PX Data.ai | https://pxdata.ai |  |  |  | 
+Qlic |  |  |  |  | Varejo
 Quanticum | https://quanticum.com.br |  |  |  | Agricultura e Pecuária
 R1 Engenharia | https://r1eng.tech |  |  |  | Indústria
 Radiant Security Inc. | https://radiantsecurity.ai |  |  |  | Cibersegurança

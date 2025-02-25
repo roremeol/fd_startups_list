@@ -1,0 +1,28 @@
+{
+  "html_file": "sites/ufrj_coppe.html",
+  "separator": " | ",
+  "root_selector": "a[rel=\"noopener\"]",
+  "columns": [
+    {
+      "name": "Nome",
+      "selector": "img",
+      "xpath": "@alt"
+    },
+    {
+      "name": "Descrição",
+      "xpath": "@href"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação"
+    }
+  ]
+}
