@@ -430,8 +430,8 @@ spectrageo | http://spectrageo.com.br/spectrageo/ |  |  |  |
 toco | https://biotoco.com.br/ |  |  |  | 
 ativatec | https://www.ativatec.com.br/ |  |  |  | 
 ARES | https://www.ares-vr.com/ |  |  |  | 
- | https://www.ativatec.com.br/ |  |  |  | 
- | https://biotoco.com.br/ |  |  |  | 
+ativatec | https://www.ativatec.com.br/ |  |  |  | 
+biotoco | https://biotoco.com.br/ |  |  |  | 
 
 
 ### CUBO - Itaú
