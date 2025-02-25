@@ -10,13 +10,12 @@ for root, dirs, files in os.walk(path):
         if file.endswith(".md"):
              readmefiles.append(os.path.join(root, file))
 
-# load README.md
+# load README
 path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"README")
 with open(path, 'r') as file:
   readme_data = file.read()
 
-# match pattern (<variable-*.?-tag>)(`*.?`)
-# example: (<variable-VERSION-tag>)(`1.1`)
+# match pattern ![[<table_name.md>]]
 for filename in readmefiles:
     basename = os.path.basename(filename)
 
