@@ -1,0 +1,28 @@
+{
+  "html_file": "sites/unicamp.html",
+  "separator": " | ",
+  "root_selector": "a.meta",
+  "columns": [
+    {
+      "name": "Nome",
+      "xpath": "@href",
+      "eval": "%var%.rsplit('/', 2)[1]"
+    },
+    {
+      "name": "Descrição",
+      "xpath": "@href"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação"
+    }
+  ]
+}

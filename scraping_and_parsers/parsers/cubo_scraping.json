@@ -1,0 +1,29 @@
+{
+  "html_file": "sites/cubo_itau.html",
+  "separator": " | ",
+  "root_selector": ".startups__item",
+  "columns": [
+    {
+      "name": "Nome",
+      "xpath": "@title"
+    },
+    {
+      "name": "Descrição",
+      "selector": "a.card-link",
+      "xpath": "@href"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação",
+      "selector": "div.card-info span ::text"
+    }
+  ]
+}

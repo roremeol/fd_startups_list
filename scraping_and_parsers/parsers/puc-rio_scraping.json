@@ -1,0 +1,31 @@
+{
+  "html_file": "sites/puc-rio.html",
+  "separator": " | ",
+  "root_selector": ".eael-filterable-gallery-item-wrap",
+  "columns": [
+    {
+      "name": "Nome",
+      "selector": ".eael-gallery-grid-item > a",
+      "xpath": "@href",
+      "eval": "%var%.replace('#', '')"
+    },
+    {
+      "name": "Descrição",
+      "selector": ".eael-gallery-grid-item > a",
+      "xpath": "@href",
+      "eval": "%var%.replace('#', '')"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação"
+    }
+  ]
+}
