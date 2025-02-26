@@ -28,6 +28,8 @@ jobs:
       - name: Generate README.md
         run: |
           python replace_tag.py
+          git status  # Debug: verifica alterações
+          git diff    # Debug: mostra diferenças
 
       - name: Commit changes
         run: |
@@ -35,7 +37,7 @@ jobs:
           git config --global user.email "github_actions@email.com"
           git config --global user.name "github_actions"
           git add .
-          git commit -m "README Create Automation"
+          git commit -m "README Create Automation" || echo "Sem alterações para commit"
 
       - name: Push changes to new branch
         uses: ad-m/github-push-action@v0.6.0
