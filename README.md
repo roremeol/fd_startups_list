@@ -4,7 +4,7 @@ Este repositório é uma lista de startups brasileiras. O objetivo é ajudar emp
 
 ## Como contribuir
 
-Contribuições são bem-vindas! Se você conhece uma startup brasileira que não está na lista, por favor, abra um pull request com as informações necessárias.
+Contribuições são bem-vindas! Se você conhece uma startup brasileira que não está na lista, por favor, [leia](./CONTRIBUTING.md).
 
 ## Licença
 
