@@ -47,16 +47,15 @@ jobs:
 
       - name: Create Pull Request
         id: pr
-        uses: repo-sync/pull-request@v2
+        uses: peter-evans/create-pull-request@v5
         with:
-          source_branch: auto-update-readme-${GITHUB_RUN_ID}
-          destination_branch: "main"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Automatic README Update"
-          pr_body: "Auto-generated PR from GitHub Actions"
-          pr_close_comment: "This branch will be automatically deleted"
-          auto_merge: true
-          merge_method: merge
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-update
+          base: main
+
+      - name: Show PR Number
+        run: |
+          echo "PR Number: ${{ steps.pr.outputs.pr_number }}"
 
       - name: Auto-Merge PR
         if: success()
