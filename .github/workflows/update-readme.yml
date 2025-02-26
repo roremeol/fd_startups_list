@@ -23,7 +23,7 @@ jobs:
 
       - name: Create new branch
         run: |
-          git checkout -b auto-update-readme-${GITHUB_RUN_ID}
+          git checkout -b auto-update
 
       - name: Generate README.md
         run: |
@@ -43,19 +43,31 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: auto-update-readme-${GITHUB_RUN_ID}
+          branch: auto-update
 
       - name: Create Pull Request
         id: pr
-        uses: peter-evans/create-pull-request@v5
+        uses: repo-sync/pull-request@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: auto-update
-          base: main
+          source_branch: auto-update
+          destination_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Debug PR Outputs
+        run: |
+          echo "PR URL: ${{ steps.pr.outputs.pr_url }}"
+          echo "PR Created: ${{ steps.pr.outputs.pr_created }}"
+
+      - name: Get PR Number
+        id: extract-pr-number
+        run: |
+          PR_URL="${{ steps.pr.outputs.pr_url }}"
+          [[ $PR_URL =~ /pull/([0-9]+) ]] && echo "PR_NUMBER=${BASH_REMATCH[1]}" >> $GITHUB_OUTPUT
+        if: success()
 
       - name: Show PR Number
         run: |
-          echo "PR Number: ${{ steps.pr.outputs.pr_number }}"
+          echo "PR Number: ${{ steps.extract-pr-number.outputs.PR_NUMBER }}"
 
       - name: Auto-Merge PR
         if: success()
@@ -65,6 +77,14 @@ jobs:
             await github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: ${{ steps.pr.outputs.pr_number }},
+              pull_number: ${{ steps.extract-pr-number.outputs.PR_NUMBER }},
               merge_method: 'squash'
             })
+
+      - name: Delete Branch
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: auto-update
+        run: |
+          gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/$BRANCH_NAME"
