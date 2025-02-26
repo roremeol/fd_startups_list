@@ -53,6 +53,8 @@ jobs:
           pr_title: "Automatic README Update"
           pr_body: "Auto-generated PR from GitHub Actions"
           pr_close_comment: "This branch will be automatically deleted"
+          auto_merge: true
+          merge_method: merge
 
       - name: Delete branch if PR merged
         if: steps.pr.outputs.result == 'success'
