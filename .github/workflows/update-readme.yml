@@ -58,7 +58,14 @@ jobs:
           auto_merge: true
           merge_method: merge
 
-      - name: Delete branch if PR merged
-        if: steps.pr.outputs.result == 'success'
-        run: |
-          git push origin --delete auto-update-readme-${GITHUB_RUN_ID} || echo "Branch already deleted"
+      - name: Auto-Merge PR
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ steps.pr.outputs.pr_number }},
+              merge_method: 'squash'
+            })
