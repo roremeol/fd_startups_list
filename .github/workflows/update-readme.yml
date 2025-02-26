@@ -47,6 +47,8 @@ jobs:
 
       - name: Check GH Version
         run: gh --version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Pull Request
         id: pr
@@ -62,6 +64,8 @@ jobs:
           # Extrai o número do PR da URL
           PR_NUMBER=$(basename $PR_URL)
           echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge PR
         run: |
@@ -69,9 +73,13 @@ jobs:
             --squash \
             --auto \
             --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Force Cleanup (Fallback)
         if: always()
         run: |
           gh api -X DELETE "/repos/${{ github.repository }}/git/refs/heads/auto-update" \
             || echo "Branch já deletada"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
