@@ -7,38 +7,54 @@ on:
       - tables/*.md
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update_templates:
     name: "Update README"
     runs-on: ubuntu-latest
     steps:
-      - name: "📥 Update GitHub Readme files"
-        uses: actions/checkout@main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
-      # Runs a set of commands using the runners shell
-      - name: Create README.md
+      - name: Create new branch
+        run: |
+          git checkout -b auto-update-readme-${GITHUB_RUN_ID}
+
+      - name: Generate README.md
         run: |
           python replace_tag.py
-      - name: pull-request
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: commit
+      - name: Commit changes
         run: |
           sudo chmod -R ugo+rwX .
-          git config --global user.email github_actions@email.com
-          git config --global user.name github_actions
+          git config --global user.email "github_actions@email.com"
+          git config --global user.name "github_actions"
           git add .
-          git commit -m "README Create Automation" -a
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     force: true
-      - name: Push changes
+          git commit -m "README Create Automation"
+
+      - name: Push changes to new branch
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-update-readme-${GITHUB_RUN_ID}
+
+      - name: Create Pull Request
+        id: pr
         uses: repo-sync/pull-request@v2
         with:
+          source_branch: auto-update-readme-${GITHUB_RUN_ID}
           destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Automatic README Update"
+          pr_body: "Auto-generated PR from GitHub Actions"
+          pr_close_comment: "This branch will be automatically deleted"
+
+      - name: Delete branch if PR merged
+        if: steps.pr.outputs.result == 'success'
+        run: |
+          git push origin --delete auto-update-readme-${GITHUB_RUN_ID} || echo "Branch already deleted"
