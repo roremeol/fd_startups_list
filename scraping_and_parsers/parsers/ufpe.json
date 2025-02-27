@@ -1,0 +1,29 @@
+{
+  "html_file": "sites/ufpe-1.html",
+  "separator": " | ",
+  "root_selector": "div.elementor-element-populated section",
+  "columns": [
+    {
+      "name": "Nome",
+      "selector": "[data-element_type=\"column\"]:nth-child(2) p:nth-child(1)",
+      "eval": "re.sub(r\"<.*?>\", \"\", re.sub(\"Nome:\", \"\", re.sub(r\"\\s{2,}\", \" \", %var%)))"
+    },
+    {
+      "name": "Descrição",
+      "selector": "[data-element_type=\"column\"]:nth-child(2) p:nth-child(2)",
+      "eval": "re.sub(r\"<.*?>\", \"\", re.sub(\"Solução:\", \"\", re.sub(r\"\\s{2,}\", \" \", %var%)))"
+    },
+    {
+      "name": "Github"
+    },
+    {
+      "name": "CTO"
+    },
+    {
+      "name": "Tech Leader"
+    },
+    {
+      "name": "Área de atuação"
+    }
+  ]
+}
