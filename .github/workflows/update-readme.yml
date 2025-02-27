@@ -69,20 +69,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable Auto-Merge
-        run: |
-          gh pr merge ${{ steps.pr.outputs.PR_NUMBER }} \
-            --enable-auto-merge \
-            --merge-method squash \
-            --admin  # Ignora branch protections
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Merge PR
         run: |
           gh pr merge ${{ steps.pr.outputs.PR_NUMBER }} \
-            --admin \
-            --squash \
+            --merge \
+            --auto \
             --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
