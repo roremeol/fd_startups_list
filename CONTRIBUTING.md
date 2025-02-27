@@ -1,5 +1,15 @@
 # Contribuindo
 
+## Tipos de contribuição
+
+### Enseridos novas startups
+
+1. Você pode utilizar o `scraping.py` e os parsers json ( ex.: [usp](./scraping_and_parsers/parsers/usp_scraping.json) ) e colocando o markedown resultante na [pasta de tabelas](./tables/). `ex.: python scraping.py "parsers/ufpe.json > tables/ufpe.md"`
+
+### Atualizando dados de uma startup
+
+1. Basta modificar diretamente o markedown referente a startup na [pasta de tabelas](./tables/)
+
 ## Enviando um pull request
 
 1. Fork e clone o repositório
